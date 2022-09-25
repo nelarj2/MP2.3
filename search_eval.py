@@ -14,7 +14,7 @@ class InL2Ranker(metapy.index.RankingFunction):
     """
 
     ranker = metapy.index.DirichletPrior(9)
-
+    # RANKER= metapy
     def __init__(self, some_param=1.0):
         self.param = some_param
         # You *must* call the base class constructor here!

@@ -7,7 +7,7 @@ import time
 # from scipy import stats
 import metapy
 import pytoml
-import numpy as np
+
 class InL2Ranker(metapy.index.RankingFunction):
     """
     Create a new ranking function in Python that can be used in MeTA.
@@ -26,9 +26,9 @@ class InL2Ranker(metapy.index.RankingFunction):
         For fields available in the score_data sd object,
         @see https://meta-toolkit.org/doxygen/structmeta_1_1index_1_1score__data.html
         """
-        tfn = np.log2(1+(sd.avg_dl/sd.doc_size))
+        tfn = math.log2(1+(sd.avg_dl/sd.doc_size))
         s1 = tfn/(tfn+self.param)
-        s2 = np.log2((sd.num_docs+1)/(self.param+.5))
+        s2 = math.log2((sd.num_docs+1)/(self.param+.5))
 
         # return (self.param + sd.doc_term_count) / (self.param * sd.doc_unique_terms + sd.doc_size)
         return s1*s2

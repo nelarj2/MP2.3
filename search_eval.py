@@ -31,7 +31,7 @@ class InL2Ranker(metapy.index.RankingFunction):
         # s2 = math.log2((sd.num_docs+1)/(self.param+.5))
 
         doc_term_count = sd.doc_term_count
-        inversefunc = math.log2((1+sd.num_docs)/(1+sd.doc_count))
+        inversefunc = math.log(((1+sd.num_docs)/(1+sd.doc_count)),2)
 
         # return (self.param + sd.doc_term_count) / (self.param * sd.doc_unique_terms + sd.doc_size)
         return doc_term_count*inversefunc

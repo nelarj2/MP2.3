@@ -3,8 +3,8 @@ from pydoc import pager
 
 import sys
 import time
-import scipy
-from scipy import stats
+# import scipy
+# from scipy import stats
 import metapy
 import pytoml
 import numpy as np
@@ -99,10 +99,10 @@ with open('inl2.avg_p.txt', 'r') as f:
             y.append(float(line.strip()))
 
 
-
-t, p = scipy.stats.ttest_rel(x, y)
-print(t)
-print(p)
-f = open("significance.txt", "a")
-f.write("%s\n" % p)
-f.close()
+#p-value calculation
+# t, p = scipy.stats.ttest_rel(x, y)
+# print(t)
+# print(p)
+# f = open("significance.txt", "a")
+# f.write("%s\n" % p)
+# f.close()

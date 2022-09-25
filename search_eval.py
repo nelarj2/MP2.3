@@ -1,10 +1,13 @@
 import math
+from pydoc import pager
+from symbol import yield_arg
 import sys
 import time
-
+import scipy
+from scipy import stats
 import metapy
 import pytoml
-
+import numpy as np
 class InL2Ranker(metapy.index.RankingFunction):
     """
     Create a new ranking function in Python that can be used in MeTA.

@@ -1,6 +1,7 @@
 import metapy 
 import pytoml
 # Build the query object and initialize a ranker
+idx = metapy.index.make_inverted_index('config.toml')
 query = metapy.index.Document()
 ranker = metapy.index.OkapiBM25(k1=1.2,b=0.75,k3=500)
 # To do an IR evaluation, we need to use the queries file and relevance judgements.
